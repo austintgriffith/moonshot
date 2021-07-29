@@ -5,11 +5,9 @@
 ---
 
 ```bash
-git clone https://github.com/austintgriffith/scaffold-eth.git moonshot-collective
+git clone https://github.com/austintgriffith/moonshot.git moonshot-collective
 
 cd moonshot-collective
-
-git checkout moonshot-collective
 ```
 
 ```bash
