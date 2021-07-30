@@ -773,7 +773,7 @@ function App(props) {
           <div>
             Built with &lt;3 in Colorado
             <br />
-            <a href="https://gitcoin.co">Gitcoin</a> | <a href="https://buidlguidl.com">Buidl Guidl</a>
+            <a href="https://gitcoin.co">Gitcoin</a> | <a href="https://buidlguidl.com">Buidl Guidl</a> |
           </div>
         </div>
       </footer>
