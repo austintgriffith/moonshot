@@ -421,6 +421,9 @@ function App(props) {
               <a href>
                 <li>Discussion</li>
               </a>
+              <a href="https://github.com/austintgriffith/moonshot">
+                <li>Code</li>
+              </a>
             </ul>
           </nav>
           {/* mobile buger ui */}
