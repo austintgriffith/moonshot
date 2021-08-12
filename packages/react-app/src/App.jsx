@@ -412,16 +412,16 @@ function App(props) {
               <a href>
                 <li aria-current="page">Home</li>
               </a>
-              <a href>
+              <a target="_Blank" href="https://gov.gitcoin.co/t/workstream-dapp-prototyping-the-moonshot-collective/130">
                 <li>Announcement</li>
               </a>
-              <a href>
+              <a target="_Blank" href="https://trello.com/invite/b/qDaciNgF/7bfb25669446bd208922768a0b593c05/moonshot-collective">
                 <li>Projects</li>
               </a>
-              <a href>
+              <a target="_Blank" href="https://t.me/joinchat/BHPBtqODJGo0NDdh">
                 <li>Discussion</li>
               </a>
-              <a href="https://github.com/austintgriffith/moonshot">
+              <a target="_Blank" href="https://github.com/austintgriffith/moonshot">
                 <li>Code</li>
               </a>
             </ul>
@@ -549,10 +549,7 @@ function App(props) {
           <div>
             <h1>What</h1>
             <p>
-              For the first time ever, it is possible to program our values into our
-              money. We value coordination, so why not use programmable money to create better coordination tools? The
-              moonshot collective is a collection of builders &amp; web3 community members who are looking to prototype
-              experiments in coordination (whether thats public goods, private goods, governance tools).
+              The moonshot collective is a collection of builders & web3 community members who are looking to prototype experiments in coordination (whether thats public goods, private goods, governance tools).
             </p>
             <div style={{fontSize:22, marginTop:32}}>Got dev skills
             + want to help build the future?</div>
@@ -597,52 +594,11 @@ function App(props) {
           </figure>
           <figure data-kinetics-attraction>
             <a href="#">
-              <img src="assets/images/moon-60.svg" />
-              <figcaption>Castall</figcaption>
-            </a>
-          </figure>
-          <figure data-kinetics-attraction>
-            <a href="#">
-              <img src="assets/images/moon-80.svg" />
-              <figcaption>Auryn</figcaption>
-            </a>
-          </figure>
-          <figure data-kinetics-attraction>
-            <a href="#">
               <img src="assets/images/moon-100.svg" />
               <figcaption>You</figcaption>
             </a>
           </figure>
-          <figure data-kinetics-attraction>
-            <a href="#">
-              <img src="assets/images/moon-20.svg" />
-              <figcaption>Austin</figcaption>
-            </a>
-          </figure>
-          <figure data-kinetics-attraction>
-            <a href="#">
-              <img src="assets/images/moon-40.svg" />
-              <figcaption>Kevin</figcaption>
-            </a>
-          </figure>
-          <figure data-kinetics-attraction>
-            <a href="#">
-              <img src="assets/images/moon-60.svg" />
-              <figcaption>Castall</figcaption>
-            </a>
-          </figure>
-          <figure data-kinetics-attraction>
-            <a href="#">
-              <img src="assets/images/moon-80.svg" />
-              <figcaption>Auryn</figcaption>
-            </a>
-          </figure>
-          <figure data-kinetics-attraction>
-            <a href="#">
-              <img src="assets/images/moon-100.svg" />
-              <figcaption>You</figcaption>
-            </a>
-          </figure>
+
         </section>
       </article>
       {/* EXPLAIN */}
@@ -776,7 +732,7 @@ function App(props) {
           <div>
             Built with &lt;3 in Colorado
             <br />
-            <a href="https://gitcoin.co">Gitcoin</a> | <a href="https://buidlguidl.com">Buidl Guidl</a> | <a href="https://github.com/austintgriffith/moonshot">Github</a> | <a href="https://discord.gg/BqmtuCCr9D">Discord</a>
+            <a href="https://gitcoin.co">Gitcoin</a> | <a href="https://buidlguidl.com">Buidl Guidl</a>
           </div>
         </div>
       </footer>
