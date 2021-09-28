@@ -732,7 +732,9 @@ function App(props) {
           <div>
             Built with &lt;3 in Colorado
             <br />
-            <a href="https://gitcoin.co">Gitcoin</a> | <a href="https://buidlguidl.com">Buidl Guidl</a>
+            <a href="https://twitter.com/MoonshotCollect">Twitter</a> | <a href="https://www.youtube.com/channel/UCfbOba7iD19HyrB9QbV6Uww">YouTube</a> | <a href="https://buidlguidl.com">Buidl Guidl</a>
+            <br />
+            <a href="https://gitcoin.co">Gitcoin</a> | <a href="https://gitcoin.co/discord">Gitcoin Discord</a> | <a href="https://gov.gitcoin.co/">Gitcoin Governance</a>
           </div>
         </div>
       </footer>
