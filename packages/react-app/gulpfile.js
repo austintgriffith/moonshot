@@ -38,10 +38,13 @@ gulp.task('notion-sync', async () => {
     return { name: getPageProperty(page, 'Name'), link: getPageProperty(page, 'Github') }
   })
 
+  
   const notionDB = {
-    members: members.filter(member => Boolean(members.name)),
+    members: members.filter(member => Boolean(member.name)),
     projects: projects.filter(project => Boolean(project.name)),
   }
+  
+  console.log(notionDB)
 
   fs.writeFileSync('./public/static-info.json', JSON.stringify(notionDB))
 })

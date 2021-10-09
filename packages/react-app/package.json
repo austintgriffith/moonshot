@@ -101,6 +101,7 @@
     "s3": "node ./scripts/s3.js",
     "ship": "yarn surge",
     "theme": "npx gulp less",
+    "notion-sync": "npx gulp notion-sync",
     "watch": "node ./scripts/watch.js"
   }
 }

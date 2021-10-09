@@ -20,7 +20,6 @@ const getNotionDatabase = async (databaseId) => {
 const getPageProperty = (page, key) => {
   const k = page.properties[key]
   let text 
-  console.log(k.title)
   if (k.title && k.title.length) {
     text = k.title[0].plain_text
   }
