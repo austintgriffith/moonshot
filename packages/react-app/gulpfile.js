@@ -5,6 +5,8 @@ const debug = require('gulp-debug')
 var csso = require('gulp-csso')
 const autoprefixer = require('autoprefixer')
 const NpmImportPlugin = require('less-plugin-npm-import')
+const { getNotionDatabase, getPageProperty } = require('./scripts/notion')
+const fs = require('fs')
 
 gulp.task('less', function () {
   const plugins = [autoprefixer()]
@@ -25,4 +27,21 @@ gulp.task('less', function () {
       }),
     )
     .pipe(gulp.dest('./public'))
+})
+
+gulp.task('notion-sync', async () => {
+  const projectsDB = await getNotionDatabase('3ff32b7b50774a81975d34b100f7015f')
+  const membersDB = await getNotionDatabase('206a62fe468940138b8940c88bac31bf')
+  
+  const members = membersDB.map(page => ({ name: getPageProperty(page, 'Name') }))
+  const projects = projectsDB.map(page => {
+    return { name: getPageProperty(page, 'Name'), link: getPageProperty(page, 'Github') }
+  })
+
+  const notionDB = {
+    members: members.filter(member => Boolean(members.name)),
+    projects: projects.filter(project => Boolean(project.name)),
+  }
+
+  fs.writeFileSync('./public/static-info.json', JSON.stringify(notionDB))
 })
