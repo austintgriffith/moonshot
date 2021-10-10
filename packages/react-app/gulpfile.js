@@ -30,8 +30,8 @@ gulp.task('less', function () {
 })
 
 gulp.task('notion-sync', async () => {
-  const projectsDB = await getNotionDatabase('3ff32b7b50774a81975d34b100f7015f')
-  const membersDB = await getNotionDatabase('206a62fe468940138b8940c88bac31bf')
+  const projectsDB = await getNotionDatabase('a4ce0bffe31f401ab12f1aef73cdf94e')
+  const membersDB = await getNotionDatabase('8515ca9d95ce4f5792bc327e6992f88f')
   
   const members = membersDB.map(page => ({ name: getPageProperty(page, 'Name') }))
   const projects = projectsDB.map(page => {
