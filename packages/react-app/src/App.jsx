@@ -388,6 +388,19 @@ function App(props) {
 
   const [walletMenu, setWalletMenu] = useState(false);
   const [pageMenu, setPageMenu] = useState(false);
+  const [statics, setStatics] = useState({ members: [], projects: [] });
+
+  useEffect(() => {
+    (async () => {
+      const fetchStatics = async () => await axios.get("/static-info.json");
+      try {
+        const { data } = await fetchStatics();
+        setStatics(data);
+      } catch (e) {
+        console.error("fetch statics failed");
+      }
+    })();
+  }, []);
 
   return (
     <div>
@@ -412,10 +425,16 @@ function App(props) {
               <a href>
                 <li aria-current="page">Home</li>
               </a>
-              <a target="_Blank" href="https://gov.gitcoin.co/t/workstream-dapp-prototyping-the-moonshot-collective/130">
+              <a
+                target="_Blank"
+                href="https://gov.gitcoin.co/t/workstream-dapp-prototyping-the-moonshot-collective/130"
+              >
                 <li>Announcement</li>
               </a>
-              <a target="_Blank" href="https://trello.com/invite/b/qDaciNgF/7bfb25669446bd208922768a0b593c05/moonshot-collective">
+              <a
+                target="_Blank"
+                href="https://trello.com/invite/b/qDaciNgF/7bfb25669446bd208922768a0b593c05/moonshot-collective"
+              >
                 <li>Projects</li>
               </a>
               <a target="_Blank" href="https://t.me/joinchat/BHPBtqODJGo0NDdh">
@@ -549,12 +568,12 @@ function App(props) {
           <div>
             <h1>What</h1>
             <p>
-              The moonshot collective is a collection of builders & web3 community members who are looking to prototype experiments in coordination (whether thats public goods, private goods, governance tools).
+              The moonshot collective is a collection of builders & web3 community members who are looking to prototype
+              experiments in coordination (whether thats public goods, private goods, governance tools).
             </p>
-            <div style={{fontSize:22, marginTop:32}}>Got dev skills
-            + want to help build the future?</div>
-            <div style={{fontSize:32, marginTop:32}}>
-            <a href="#subscribe">Get Involved.</a>
+            <div style={{ fontSize: 22, marginTop: 32 }}>Got dev skills + want to help build the future?</div>
+            <div style={{ fontSize: 32, marginTop: 32 }}>
+              <a href="#subscribe">Get Involved.</a>
             </div>
           </div>
           <figure>
@@ -586,19 +605,20 @@ function App(props) {
               <figcaption>Austin</figcaption>
             </a>
           </figure>
-          <figure data-kinetics-attraction>
-            <a href="#">
-              <img src="assets/images/moon-40.svg" />
-              <figcaption>Kevin</figcaption>
-            </a>
-          </figure>
+          {statics.members.map(({ name }) => (
+            <figure data-kinetics-attraction key={name}>
+              <a href="#">
+                <img src="assets/images/moon-40.svg" />
+                <figcaption>{name}</figcaption>
+              </a>
+            </figure>
+          ))}
           <figure data-kinetics-attraction>
             <a href="#">
               <img src="assets/images/moon-100.svg" />
               <figcaption>You</figcaption>
             </a>
           </figure>
-
         </section>
       </article>
       {/* EXPLAIN */}
@@ -640,41 +660,17 @@ function App(props) {
       {/* PROECTS */}
       <article id="projects">
         <section className="column">
-          <h1>Who</h1>
+          <h1>Projects</h1>
         </section>
         <section className="content-projects">
-          <figure data-kinetics-attraction>
-            <a href="https://buidlguidl.com">
-              {/* pls load svg line with react */}
-              {/* <object type="image/svg+xml" data="assets/images/project-3.svg" /> */}
-              <SVG src="assets/images/project-3.svg" />
-              <figcaption>Buidl Guidl</figcaption>
-            </a>
-          </figure>
-          <figure data-kinetics-attraction>
-            <a href="https://gitcoin.co">
-              {/* pls load as regular svg line with react */}
-              <SVG src="assets/images/project-4.svg" />
-              {/* <object type="image/svg+xml" data="assets/images/project-4.svg" /> */}
-              <figcaption>Gitcoin</figcaption>
-            </a>
-          </figure>
-          <figure data-kinetics-attraction>
-            <a href="http://scaffoldeth.io">
-              {/* pls load as regular svg line with react */}
-              <SVG src="assets/images/project-5.svg" />
-              {/* <object type="image/svg+xml" data="assets/images/project-5.svg" /> */}
-              <figcaption>Scaffold.eth</figcaption>
-            </a>
-          </figure>
-          <figure data-kinetics-attraction>
-            <a href="#">
-              {/* pls load as regular svg line with react */}
-              <SVG src="assets/images/project-6.svg" />
-              {/* <object type="image/svg+xml" data="assets/images/project-6.svg" /> */}
-              <figcaption>Alumni X</figcaption>
-            </a>
-          </figure>
+          {statics.projects.map(({ name, link }) => (
+            <figure data-kinetics-attraction key={name}>
+              <a href={link}>
+                <SVG src="assets/images/project-3.svg" />
+                <figcaption>{name}</figcaption>
+              </a>
+            </figure>
+          ))}
           <figure data-kinetics-attraction>
             <a href="#">
               {/* pls load as regular svg line with react */}
@@ -732,9 +728,12 @@ function App(props) {
           <div>
             Built with &lt;3 in Colorado
             <br />
-            <a href="https://twitter.com/MoonshotCollect">Twitter</a> | <a href="https://www.youtube.com/channel/UCfbOba7iD19HyrB9QbV6Uww">YouTube</a> | <a href="https://buidlguidl.com">Buidl Guidl</a>
+            <a href="https://twitter.com/MoonshotCollect">Twitter</a> |{" "}
+            <a href="https://www.youtube.com/channel/UCfbOba7iD19HyrB9QbV6Uww">YouTube</a> |{" "}
+            <a href="https://buidlguidl.com">Buidl Guidl</a>
             <br />
-            <a href="https://gitcoin.co">Gitcoin</a> | <a href="https://gitcoin.co/discord">Gitcoin Discord</a> | <a href="https://gov.gitcoin.co/">Gitcoin Governance</a>
+            <a href="https://gitcoin.co">Gitcoin</a> | <a href="https://gitcoin.co/discord">Gitcoin Discord</a> |{" "}
+            <a href="https://gov.gitcoin.co/">Gitcoin Governance</a>
           </div>
         </div>
       </footer>
