@@ -427,21 +427,15 @@ function App(props) {
               </a>
               <a
                 target="_Blank"
-                href="https://gov.gitcoin.co/t/workstream-dapp-prototyping-the-moonshot-collective/130"
+                href=" https://gitcoin.notion.site/Moonshot-Collective-e8a5bbb2b6f3494db109849d159e1b51"
               >
-                <li>Announcement</li>
+                <li>Notion</li>
               </a>
-              <a
-                target="_Blank"
-                href="https://trello.com/invite/b/qDaciNgF/7bfb25669446bd208922768a0b593c05/moonshot-collective"
-              >
-                <li>Projects</li>
+              <a target="_Blank" href="https://discord.gg/SdKHH4brrE">
+                <li>Discord</li>
               </a>
-              <a target="_Blank" href="https://t.me/joinchat/BHPBtqODJGo0NDdh">
-                <li>Discussion</li>
-              </a>
-              <a target="_Blank" href="https://github.com/austintgriffith/moonshot">
-                <li>Code</li>
+              <a target="_Blank" href="https://github.com/moonshotcollective">
+                <li>GitHub</li>
               </a>
             </ul>
           </nav>
